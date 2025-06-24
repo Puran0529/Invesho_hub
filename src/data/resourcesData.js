@@ -123,6 +123,38 @@ legalDocs: [
         link: '/documents/Independent Contractor Agreement.pdf'
     }
 ],
+// Inside your resourcesData object, replace the entire pitchDecks array with this:
+
+pitchDecks: [
+    { 
+        id: 'pd-1', 
+        name: 'Airbnb Pitch Deck', 
+        source: 'Seed Round', 
+        description: 'The legendary deck that started it all. A masterclass in simplicity and defining a new market category in a clear, visual way.', 
+        link: '/pitch-decks/Airbnb.pdf' 
+    },
+    { 
+        id: 'pd-2', 
+        name: 'Uber Pitch Deck', 
+        source: 'Seed Round (2008)', 
+        description: 'A fantastic example of a deck that is direct, problem-focused, and outlines a bold vision for the future of transportation.', 
+        link: '/pitch-decks/uber-pitch-deck.pdf' 
+    },
+    { 
+        id: 'pd-3', 
+        name: 'Mixpanel Pitch Deck', 
+        source: 'Seed Round', 
+        description: 'A masterclass in defining a target market and showcasing deep customer understanding. A must-see for B2B startups.',
+        link: '/pitch-decks/mixpanel.pdf' 
+    },
+    { 
+        id: 'pd-4', 
+        name: 'Sequoia Capital Template', 
+        source: 'VC Template', 
+        description: 'The official, no-nonsense template from a legendary VC firm. It focuses on the essential elements they look for in a business plan.', 
+        link: '/pitch-decks/SequoitaCapital.pdf'
+    }
+],
   "investorDb": [
     {
       "name": "Techstars",

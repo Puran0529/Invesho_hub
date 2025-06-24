@@ -16,18 +16,33 @@ const PitchDecksPage = () => (
             <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Pitch Deck Templates</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {resourcesData.pitchDecks.map(item => (
-                <div key={item.id} className="resource-card">
-                    <div className="mb-4">
-                        <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                        <p className="text-sm text-slate-400">{item.source}</p>
+            {resourcesData.pitchDecks.map(item => {
+                // Check if the link is a local file or an external URL
+                const isLocalFile = item.link.startsWith('/');
+                
+                return (
+                    <div key={item.id} className="resource-card">
+                        <div className="mb-4">
+                            <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                            <p className="text-sm text-slate-400">{item.source}</p>
+                        </div>
+                        <p className="text-slate-400 mb-5 flex-grow text-sm">{item.description}</p>
+                        <div className="text-center mt-auto pt-6 border-t border-slate-800">
+                            <a 
+                                href={item.link} 
+                                // The 'download' attribute tells the browser to download local files
+                                download={isLocalFile} 
+                                // '_blank' opens external links in a new tab
+                                target={isLocalFile ? '' : '_blank'} 
+                                rel="noopener noreferrer" 
+                                className="action-button"
+                            >
+                                {isLocalFile ? 'Download PDF' : 'View Online'}
+                            </a>
+                        </div>
                     </div>
-                    <p className="text-slate-400 mb-5 flex-grow text-sm">{item.description}</p>
-                    <div className="text-center mt-auto pt-6 border-t border-slate-800">
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="action-button">View Template</a>
-                    </div>
-                </div>
-            ))}
+                );
+            })}
         </div>
     </div>
 );
