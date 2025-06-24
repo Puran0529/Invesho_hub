@@ -72,13 +72,141 @@ export const resourcesData = {
         { id: 'sequoia', name: 'Sequoia Capital Pitch Deck', source: 'Template', description: 'The official template from a legendary VC firm, focusing on the essential elements they look for.', link: '#' },
         { id: 'buffer', name: 'Buffer Pitch Deck', source: 'Seed Round', description: 'Excellent example of transparency and traction-based storytelling to secure funding.', link: '#' },
     ],
-    legalDocs: [
-        { id: 'nda', name: 'Mutual NDA Template', category: 'General Contracts', description: 'A standard Non-Disclosure Agreement.', whenToUse: 'Use this to protect confidential information when discussing your business with potential partners or investors.', content: "MUTUAL NON-DISCLOSURE AGREEMENT\n\nThis Mutual Non-Disclosure Agreement (the \"Agreement\") is made as of [Date], by and between [Your Company Name], a [Your State of Incorporation] corporation (\"Company\"), and [Other Party Name], a [Their State of Incorporation] corporation (\"Counterparty\").\n\n1. Purpose. The parties wish to explore a business opportunity of mutual interest and in connection with this opportunity, each party may disclose to the other certain confidential technical and business information which the disclosing party desires the receiving party to treat as confidential.\n\n2. \"Confidential Information\" means any information disclosed by either party to the other party, either directly or indirectly, in writing, orally or by inspection of tangible objects (including without limitation documents, prototypes, samples, plant and equipment), which is designated as \"Confidential,\" \"Proprietary\" or some similar designation.\n\n3. Obligations. The receiving party shall use the Confidential Information solely for the Purpose and shall not disclose such Confidential Information to any third party without the prior written consent of the disclosing party.\n\n4. Term. The foregoing obligations as to confidentiality shall survive the termination of this Agreement.\n\n5. Miscellaneous. This Agreement shall be governed by the laws of the State of [Your State].\n\nIN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.\n\n[Your Company Name]\n\nBy: _________________________\nName: [Your Name]\nTitle: [Your Title]\n\n[Other Party Name]\n\nBy: _________________________\nName: [Counterparty Name]\nTitle: [Counterparty Title]" },
-        { id: 'founder_agreement', name: 'Founder Agreement', category: 'Company Formation', description: 'Defines roles, responsibilities, equity, and vesting schedules.', whenToUse: 'Crucial for co-founders to establish clear terms and expectations from day one.', content: `FOUNDER EMPLOYMENT AGREEMENT\n\nThis Founder Employment Agreement (\"Agreement\") is executed on [Execution Date]:\n\nBETWEEN\n\n[Company Name], a [company] incorporated under the [Companies Act, 2013] having its registered office at [Address] (hereinafter referred to as the "Company"),\n\nAND\n\n[Founder Name], son/daughter of [...] residing at [Address] (hereinafter referred as the \"Founder\").\n\n1. DEFINITIONS...\n2. EMPLOYMENT...\n3. PLACE OF WORK...\n4. DUTIES AND OBLIGATIONS...\n5. REMUNERATION AND BENEFITS...\n6. RECEIPT OF PAYMENTS AND BENEFITS FROM THIRD PARTIES...\n7. INTELLECTUAL PROPERTY RIGHTS...\n8. NON COMPETE AND NON SOLICIT...\n9. CONFIDENTIALITY...\n10. REMEDIES...\n11. TERMINATION...\n12. NOTICES...\n13. MISCELLANEOUS...\n\nIN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.\n\nCOMPANY: _________________________\n\nFOUNDER: _________________________` },
-        { id: 'term_sheet', name: 'Seed Round Term Sheet', category: 'Fundraising', description: 'A non-binding agreement outlining the basic terms of an investment.', whenToUse: 'Use this to outline the investment terms with a VC before drafting the final legal documents.', content: `TEMPLATE INVESTMENT TERM SHEET\n\nThis document (Term Sheet) summarises the principal terms of a proposed investment in [INSERT NAME OF COMPANY] LIMITED (Company).\n\nPART A: INVESTMENT TERMS (NON-BINDING)\n\nBusiness: The business of the Company is [insert a description of the Company’s business] (Business).\n\nInvestor: [Insert name of Investor] (Investor).\n\nAmount of investment: The Investor proposes to invest $[insert aggregate amount to be invested] (Investment Amount) by way of subscription for ordinary shares in the Company (Shares) [at a pre money valuation of $[insert pre-money valuation]], for an equity share of [to insert]%.\n\n[...]` },
-        { id: 'advisor_agreement', name: 'Advisor Agreement', category: 'Hiring & Team', description: 'Template for formalizing the relationship with a startup advisor.', whenToUse: 'Use this when bringing on an advisor to define their role and compensation (usually equity).', content: `FOUNDER ADVISOR STANDARD TEMPLATE\n\nThis Founder Advisor Standard Template (the “Agreement”) is entered into the date set forth on the signature page by and between [Company Name] (the “Company”) and [Advisor Name] (the “Advisor”).\n\nThe parties agree as follows:\n\n1. Services. Advisor agrees to act as a mentor or advisor to the Company and provide advice and assistance to the Company from time to time as further described on Schedule A attached hereto or as otherwise mutually agreed to by the parties (collectively, the “Services”).\n\n2. Compensation. Advisor shall not be entitled to receive cash compensation; however, Advisor shall be entitled to receive the equity compensation...\n\n[...]` },
-        { id: 'contractor_agreement', name: 'Independent Contractor Agreement', category: 'Hiring & Team', description: 'Use this when hiring an external contractor or freelancer.', whenToUse: 'Defines the scope of work, payment terms, and confidentiality for non-employees.', content: `Independent Contractor Agreement\n\nThis Agreement is entered into as of __________, 20___, between __________________ ("Company") and _________________________ ("Independent Contractor").\n\nIn consideration of the promises and agreements contained herein, the parties agree as follows:\n\n1. Engagement. Subject to the terms and conditions set forth in this Agreement, the Company hereby engages the Independent Contractor to perform services for the Company as set forth herein, and the Independent Contractor hereby accepts such engagement.\n\n[...]` }
-    ],
+    // Inside your resourcesData object, replace the entire legalDocs array with this:
+
+legalDocs: [
+    { 
+        id: 'nda', 
+        name: 'Mutual NDA Template', 
+        category: 'General Contracts', 
+        description: 'A standard Non-Disclosure Agreement.', 
+        whenToUse: 'Use this to protect confidential information when discussing your business with potential partners or investors.', 
+        // FIX: Using backticks and removed unnecessary escapes
+        content: `MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement (the "Agreement") is made as of [Date], by and between [Your Company Name], a [Your State of Incorporation] corporation ("Company"), and [Other Party Name], a [Their State of Incorporation] corporation ("Counterparty").
+
+1. Purpose. The parties wish to explore a business opportunity of mutual interest and in connection with this opportunity, each party may disclose to the other certain confidential technical and business information which the disclosing party desires the receiving party to treat as confidential.
+
+2. "Confidential Information" means any information disclosed by either party to the other party, either directly or indirectly, in writing, orally or by inspection of tangible objects (including without limitation documents, prototypes, samples, plant and equipment), which is designated as "Confidential," "Proprietary" or some similar designation.
+
+3. Obligations. The receiving party shall use the Confidential Information solely for the Purpose and shall not disclose such Confidential Information to any third party without the prior written consent of the disclosing party.
+
+4. Term. The foregoing obligations as to confidentiality shall survive the termination of this Agreement.
+
+5. Miscellaneous. This Agreement shall be governed by the laws of the State of [Your State].
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.
+
+[Your Company Name]
+
+By: _________________________
+Name: [Your Name]
+Title: [Your Title]
+
+[Other Party Name]
+
+By: _________________________
+Name: [Counterparty Name]
+Title: [Counterparty Title]` 
+    },
+    { 
+        id: 'founder_agreement', 
+        name: 'Founder Agreement', 
+        category: 'Company Formation', 
+        description: 'Defines roles, responsibilities, equity, and vesting schedules.', 
+        whenToUse: 'Crucial for co-founders to establish clear terms and expectations from day one.', 
+        // FIX: Removed unnecessary escapes
+        content: `FOUNDER EMPLOYMENT AGREEMENT
+
+This Founder Employment Agreement ("Agreement") is executed on [Execution Date]:
+
+BETWEEN
+
+[Company Name], a [company] incorporated under the [Companies Act, 2013] having its registered office at [Address] (hereinafter referred to as the "Company"),
+
+AND
+
+[Founder Name], son/daughter of [...] residing at [Address] (hereinafter referred as the "Founder").
+
+1. DEFINITIONS...
+2. EMPLOYMENT...
+3. PLACE OF WORK...
+4. DUTIES AND OBLIGATIONS...
+5. REMUNERATION AND BENEFITS...
+6. RECEIPT OF PAYMENTS AND BENEFITS FROM THIRD PARTIES...
+7. INTELLECTUAL PROPERTY RIGHTS...
+8. NON COMPETE AND NON SOLICIT...
+9. CONFIDENTIALITY...
+10. REMEDIES...
+11. TERMINATION...
+12. NOTICES...
+13. MISCELLANEOUS...
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+COMPANY: _________________________
+
+FOUNDER: _________________________` 
+    },
+    { 
+        id: 'term_sheet', 
+        name: 'Seed Round Term Sheet', 
+        category: 'Fundraising', 
+        description: 'A non-binding agreement outlining the basic terms of an investment.', 
+        whenToUse: 'Use this to outline the investment terms with a VC before drafting the final legal documents.', 
+        // FIX: Already uses backticks, no change needed but kept for completeness
+        content: `TEMPLATE INVESTMENT TERM SHEET
+
+This document (Term Sheet) summarises the principal terms of a proposed investment in [INSERT NAME OF COMPANY] LIMITED (Company).
+
+PART A: INVESTMENT TERMS (NON-BINDING)
+
+Business: The business of the Company is [insert a description of the Company’s business] (Business).
+
+Investor: [Insert name of Investor] (Investor).
+
+Amount of investment: The Investor proposes to invest $[insert aggregate amount to be invested] (Investment Amount) by way of subscription for ordinary shares in the Company (Shares) [at a pre money valuation of $[insert pre-money valuation]], for an equity share of [to insert]%.
+
+[...]` 
+    },
+    { 
+        id: 'advisor_agreement', 
+        name: 'Advisor Agreement', 
+        category: 'Hiring & Team', 
+        description: 'Template for formalizing the relationship with a startup advisor.', 
+        whenToUse: 'Use this when bringing on an advisor to define their role and compensation (usually equity).', 
+        // FIX: Already uses backticks, no change needed but kept for completeness
+        content: `FOUNDER ADVISOR STANDARD TEMPLATE
+
+This Founder Advisor Standard Template (the “Agreement”) is entered into the date set forth on the signature page by and between [Company Name] (the “Company”) and [Advisor Name] (the “Advisor”).
+
+The parties agree as follows:
+
+1. Services. Advisor agrees to act as a mentor or advisor to the Company and provide advice and assistance to the Company from time to time as further described on Schedule A attached hereto or as otherwise mutually agreed to by the parties (collectively, the “Services”).
+
+2. Compensation. Advisor shall not be entitled to receive cash compensation; however, Advisor shall be entitled to receive the equity compensation...
+
+[...]` 
+    },
+    { 
+        id: 'contractor_agreement', 
+        name: 'Independent Contractor Agreement', 
+        category: 'Hiring & Team', 
+        description: 'Use this when hiring an external contractor or freelancer.', 
+        whenToUse: 'Defines the scope of work, payment terms, and confidentiality for non-employees.', 
+        // FIX: Already uses backticks, no change needed but kept for completeness
+        content: `Independent Contractor Agreement
+
+This Agreement is entered into as of __________, 20___, between __________________ ("Company") and _________________________ ("Independent Contractor").
+
+In consideration of the promises and agreements contained herein, the parties agree as follows:
+
+1. Engagement. Subject to the terms and conditions set forth in this Agreement, the Company hereby engages the Independent Contractor to perform services for the Company as set forth herein, and the Independent Contractor hereby accepts such engagement.
+
+[...]` 
+    }
+],
   "investorDb": [
     {
       "name": "Techstars",
