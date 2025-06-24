@@ -66,14 +66,8 @@ export const resourcesData = {
         {"id":"64","name":"Stex25","grantAmount":"Varies","appliesTo":"Companies","institution":"MIT Startup Exchange","targetNotes":"Connects startups with MIT's ecosystem.","type":"accelerator","status":"open","link":"http://www.startupexchange.mit.edu"},
         {"id":"65","name":"Starveups","grantAmount":"Varies","appliesTo":"Companies","institution":"Starveups","targetNotes":"Mentorship-driven program in Portland.","type":"accelerator","status":"open","link":"http://www.starveups.com"}
     ],
-    pitchDecks: [
-        { id: 'airbnb', name: 'Airbnb Pitch Deck', source: 'Seed Round', description: 'A classic example of a simple, problem-solution-focused deck that raised their first $600k.', link: '#' },
-        { id: 'uber', name: 'Uber Pitch Deck', source: 'Seed Round', description: 'Famous for its clear, concise, and bold vision of the future of transportation.', link: '#' },
-        { id: 'sequoia', name: 'Sequoia Capital Pitch Deck', source: 'Template', description: 'The official template from a legendary VC firm, focusing on the essential elements they look for.', link: '#' },
-        { id: 'buffer', name: 'Buffer Pitch Deck', source: 'Seed Round', description: 'Excellent example of transparency and traction-based storytelling to secure funding.', link: '#' },
-    ],
-    // Inside your resourcesData object, replace the entire legalDocs array with this:
-
+    
+    // Inside your resourcesData object, replace the entire legalDocs array with this
 // Inside your resourcesData object, replace the legalDocs array with this:
 
 legalDocs: [
