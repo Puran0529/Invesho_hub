@@ -9,21 +9,8 @@ const BackButton = () => (
     </Link>
 );
 
-const LegalDocsPage = ({ scriptsReady }) => {
-    const handleDownload = (doc) => {
-        if (doc && scriptsReady && window.jspdf) {
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF();
-            pdf.setFontSize(16);
-            pdf.text(doc.name, 15, 20);
-            pdf.setFontSize(11);
-            const contentLines = pdf.splitTextToSize(doc.content, 180);
-            pdf.text(contentLines, 15, 35);
-            pdf.save(`${doc.name.replace(/\s/g, '_')}.pdf`);
-        } else {
-            console.error("jsPDF is not loaded yet.");
-        }
-    };
+// Note: The 'scriptsReady' prop is removed as we no longer need jsPDF here.
+const LegalDocsPage = () => {
 
     const categorizedDocs = resourcesData.legalDocs.reduce((acc, doc) => {
         (acc[doc.category] = acc[doc.category] || []).push(doc);
@@ -52,7 +39,10 @@ const LegalDocsPage = ({ scriptsReady }) => {
                                     <p className="text-slate-400 mb-2 text-sm">{item.description}</p>
                                     <p className="text-xs text-slate-500 mb-5 flex-grow italic">When to use: {item.whenToUse}</p>
                                     <div className="text-center mt-auto pt-6 border-t border-slate-800">
-                                        <button onClick={() => handleDownload(item)} className="action-button">Download</button>
+                                        {/* FIX: This is now a simple link that points to your file and includes the 'download' attribute */}
+                                        <a href={item.link} download className="action-button">
+                                            Download
+                                        </a>
                                     </div>
                                 </div>
                             ))}
