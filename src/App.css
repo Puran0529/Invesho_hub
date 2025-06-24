@@ -38,6 +38,13 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* UPDATED: Added transition for a smooth effect */
+    transition: border-color 0.3s ease;
+}
+
+/* --- NEW: Added the hover effect --- */
+.resource-card:hover {
+    border-color: #3B82F6; /* The theme's primary blue color */
 }
 
 .status-tag { 
